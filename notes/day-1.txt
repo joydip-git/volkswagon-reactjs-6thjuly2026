@@ -1,1 +1,61 @@
-https://github.com/joydip-git/volkswagon-reactjs-6thjuly2026
+clone the repo:
+>git clone https://github.com/joydip-git/volkswagon-reactjs-6thjuly2026.git
+
+to pull the latest uploads:
+
+move inside the repo folder and then use the following command:
+cloned-repo>git pull
+
+React JS learning curve:
+-------------------------------
+JavaScript 
+TypeScript
+Node JS
+HTML + CSS
+
+React JS
+
+
+JS and TS -> Day - 1 and 2 
+React JS -> Day - 3 till Day - 10
+
+
+s/w requirements:
+-------------------------
+Node JS (JS runtime)
+VS Code (Editor)
+
+HTML:
+-----------------
+tags
+
+<html>  --> opening tag
+	<head>
+	</head>
+	<body>
+	</body>
+</html>	--> closing
+
+self closing tags or empty tags:
+<meta /> -> <meta>
+<br /> -> <br>
+<hr /> -> <hr>
+
+Responsive web application (RWA)
+
+Production Web Servers:
+-------------------
+IIS (Internet Information Services) - windows O/S
+Apache Tomcat
+NgINX
+Vercel
+etc.
+
+Developmemt mode web server: (dev server/app server)
+---------------------------------------------------------
+these web servers hosts your application and serves the static contents (HTML + CSS + JS) on the browser using a certain port number
+Requests from dev machine will be processed ONLY
+
+as part of the VS Code you can add "Live Server" extension/plug-in as dev server
+
+it offers you HMR (Hot Module Replacement/Reloading) -> the modules/parts of the app which have been modified/updated, will be reloaded on the browser
