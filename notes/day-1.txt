@@ -89,6 +89,34 @@ for, for...of, for...in
 continue, break statement
 
 
+var strValue = window.prompt('enter value', 0) //'12'
+var first = Number(strValue) //'12' -> 12 or '12.34' -> 12.34
+
+//var x = parseInt(strValue) //'12' -> 12 or '12.34' -> 12
+//var x = parseFloat(strValue)//'12' -> 12.0 or '12.34' -> 12.34
+
+JS functions:
+---------------
+1. function declaration
+2. function expression
+
+a declared function can be called before the function declaration
+an expressed function can't be called before the function expression
+
+
+tomorrow's plan:
+-----------------------
+object in JS
+array in JS
+callback in JS
+new features in JS : 
+	let and const keywords, 
+	class, constructor, super and extends keywords
+	spread and rest operator
+	object destructuring
+	modules
+	....
+
 TypeScript:
 ------------------
 strictly typed language:
