@@ -59,3 +59,34 @@ Requests from dev machine will be processed ONLY
 as part of the VS Code you can add "Live Server" extension/plug-in as dev server
 
 it offers you HMR (Hot Module Replacement/Reloading) -> the modules/parts of the app which have been modified/updated, will be reloaded on the browser
+
+JavaScript:
+----------------------
+its not strictly typed language: no mention of data type. variables are declared always with "var" keyword
+
+loosely-typed language: a variable in JS can store different type of value at different point of time
+
+dynamic language
+
+data type:
+-----------------
+string, number, Boolean, object
+
+operators:
+same like any other programming language
+arithmetic operator: +, -, *, /, ....
+logical operator: and (&&) and or (||)
+assignment operator: =, +=, -=,....
+
+control flow statements:
+same like any other programming language
+if, if...else, while, do..while, switch...case
+for, for...of, for...in
+continue, break statement
+
+
+TypeScript:
+------------------
+strictly typed language:
+its a strictly typed language: mention the data type. variables are declared always with "var" keyword. if some value is assigned to a variable, then only that type of value can be assigned to the same variable.
+
