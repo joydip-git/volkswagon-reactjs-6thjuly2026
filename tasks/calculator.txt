@@ -1,0 +1,53 @@
+create a calculator:
+
+should be be able to 
+	 - add two numbers
+	 - subtract two numbers
+	 - divide two numbers
+	 - multiply two numbers
+
+based on an user choice
+	menu for user choice
+	- 1 for add
+	- 2 for subtract
+	- 3 for multiply
+	- 4 for divide
+
+ask user to enter two values for the calculation
+print the calculation value
+
+Note: the calculation should happen at least one time
+after wards ask user to enter a choice regarding whether to continue any further or not.
+if users says yes then continue with further calculation else terminate
+
+display the choice/output using window.alert()
+ask to enter value window.prompt()
+
+sample:
+
+menu:
+	- 1 for add
+	- 2 for subtract
+	- 3 for multiply
+	- 4 for divide
+
+enter choice[1/2/3/4]: 1
+enter value: 10
+enter value: 12
+result of addition: 22
+
+continue[y/Y/n/N]: y/Y
+
+menu:
+	- 1 for add
+	- 2 for subtract
+	- 3 for multiply
+	- 4 for divide
+
+enter choice[1/2/3/4]: 2
+enter value: 10
+enter value: 2
+result of addition: 8
+
+continue[y/Y/n/N]: n/N
+end of program
