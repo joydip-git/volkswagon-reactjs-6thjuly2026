@@ -55,3 +55,17 @@ switch (a) {
         window.alert('enter a proper choice')
         break;
 }
+
+/*
+ equaility (==) ->  whether value of both operands are same or not
+ strict equality (===) -> whether data type and value of both operands are same or not
+
+ inequaility (!=) ->  whether value of both operands are not same or not
+ strict inequality (!==) -> whether data type and value of both operands are not same or not
+ */
+
+var m = 10
+var n = 20
+if (m === n) {
+    
+}

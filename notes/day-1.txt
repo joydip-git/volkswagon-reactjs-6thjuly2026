@@ -72,6 +72,10 @@ data type:
 -----------------
 string, number, Boolean, object
 
+keywords:
+------------------
+undefined, NaN (Not a number), null, Infinity
+
 operators:
 same like any other programming language
 arithmetic operator: +, -, *, /, ....
@@ -80,7 +84,7 @@ assignment operator: =, +=, -=,....
 
 control flow statements:
 same like any other programming language
-if, if...else, while, do..while, switch...case
+if, if...else, while, do...while, switch...case
 for, for...of, for...in
 continue, break statement
 
