@@ -1,0 +1,55 @@
+templated string:(new feature in JS, introduced in 2015 as part of the ES6)
+---------------------------
+var str1 = 'some string '
+var str2 = 'another string'
+var str3 = 'concatenation of ' + str1 + ' and ' + str2 + 'is '+(str1 + str2)
+
+var str3 = `concatenation of ${str1} and ${str2} is ${str1} ${str2}`
+
+object in JS
+	JS is NOT an OOP language, its an Object-based programming language
+	in JS the OOP features are implemented through prototype based programming model
+
+	an object in JS is collection of some keys (properties) and values
+you access the members of JS object using dot operator (obj-ref.prop-name) or using indexer (obj-ref['prop-name'])
+
+	JS objects are expandable (dynamic), means you can add additional properties in it later point of time also.
+
+	in every JS object there is a hidden default property known as "proto". It holds a single reference to another object which is treated as its base object.
+	That means JS objects supports single and multi-level inheritance BUT NOT MULTIPLE inheritance
+
+	you can copy an object's properties and values to another object by using ... (spread operator). 
+	using this you can actually copy properties and values from multiple objects into one. 
+	it can override the disadvantage of not having multiple inheritance. 	spread operator does shallow copy of properties and their values.
+
+var targetObj = {...sourceobj1, ...sourceobj2}
+
+
+array in JS
+	array is nothing but a collection of multiple values
+	its an object
+	you can copy an array's values to another array by using spread operator
+
+object creation style:
+-------------------------
+1. object literal syntax
+2. constructor function syntax
+3. 
+
+
+callback in JS
+new features in JS : 
+	let and const keywords, 
+	class, constructor, super and extends keywords
+	spread and rest operator
+	object destructuring
+	modules
+	....
+
+TypeScript:
+------------------
+strictly typed language:
+its a strictly typed language: mention the data type. variables are declared always with "var" keyword. if some value is assigned to a variable, then only that type of value can be assigned to the same variable.
+
+
+

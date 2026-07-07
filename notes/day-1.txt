@@ -102,23 +102,3 @@ JS functions:
 
 a declared function can be called before the function declaration
 an expressed function can't be called before the function expression
-
-
-tomorrow's plan:
------------------------
-object in JS
-array in JS
-callback in JS
-new features in JS : 
-	let and const keywords, 
-	class, constructor, super and extends keywords
-	spread and rest operator
-	object destructuring
-	modules
-	....
-
-TypeScript:
-------------------
-strictly typed language:
-its a strictly typed language: mention the data type. variables are declared always with "var" keyword. if some value is assigned to a variable, then only that type of value can be assigned to the same variable.
-
