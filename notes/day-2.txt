@@ -34,7 +34,7 @@ object creation style:
 -------------------------
 1. object literal syntax
 2. constructor function syntax
-3. 
+3. class and constructor keyword
 
 
 callback in JS
@@ -45,6 +45,30 @@ new features in JS :
 	object destructuring
 	modules
 	....
+
+
+JS versioning:
+	guided by ECMA
+	guideline -> ECMAScript
+	2015 - ES6
+
+browser:
+	chrome: V8 (open source, C++)
+	safari: JS Core (indigo)
+	firefox: spidermonkey
+	opera: chromekit
+	edge: chromekit (chakra)
+	...
+2009: Ryan Dahl
+	Node JS -> a JS runtime (independent of browser) at the top of the JS engine (V8 modified to work in non-browser environment)
+	Rhino
+
+	Deno -> 
+	Bun
+
+C, C++, Java, C#, Python
+JavaScript -> create any type of app (web or desktop)
+	Angular, React JS, Vue JS, Express JS, ...
 
 TypeScript:
 ------------------

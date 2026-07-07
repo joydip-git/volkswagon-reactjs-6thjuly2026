@@ -1,0 +1,19 @@
+create an web app where salary of multiple employees will be calculated
+
+types of employees:
+	1. hr ->
+		attributes: id, name, basic, da, hra, gratuity, total
+		functionality: calculateSalary -> calculates total salary and saves the same in "total" (just add the salary parts)
+			args: NA
+			return type: void (does not return anything)
+
+	2. developer ->
+		attributes: id, name, basic, da, hra, incentive, total
+		functionality: calculateSalary -> calculates total salary and saves the same in "total" (just add the salary parts)
+			args: NA
+			return type: void (does not return anything)
+
+create few objects of different employees
+save in them in an array
+iterate through the array (use for or for...of) and calculate salary of every employee
+iterate through the array (use for or for...of) and print total salary of every employee along with name

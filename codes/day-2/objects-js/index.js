@@ -1,19 +1,31 @@
-//2-constructor function
-function person(idValue, nameValue, salaryValue) {
-    this.id = idValue
-    this.name = nameValue
-    this.salary = salaryValue
-    this.print = function () {
+//3. class and constructor keyword
+class Person {
+    constructor(idValue, nameValue, salaryValue) {
+        this.id = idValue
+        this.name = nameValue
+        this.salary = salaryValue
+        //return this
+    }
+    // print = function () {
+    //     return `${this.id}, ${this.name}, ${this.salary}`
+    // }
+    print() {
         return `${this.id}, ${this.name}, ${this.salary}`
     }
-    //return this
 }
 
-//new keyword is an instruction to JS runtime to create a so-called blank object (at least proto property will be there)
-//JS will link that object with the person function call followed by the new keyword
-//in the person function the 'this' keyword refers to the object created by 'new' keyword in previous step
-var anilObj = new person(1, 'anil', 1000)
-var sunilObj = new person(2, 'sunil', 2000)
+class Trainer extends Person {
+    constructor(idValue, nameValue, salaryValue, subjectValue) {
+        super(idValue, nameValue, salaryValue)
+        this.subject = subjectValue
+    }
+    print() {
+        return `${super.print()} ${this.subject}`
+    }
+}
+
+var anilObj = new Trainer(1, 'anil', 1000, 'JavaScript')
+var sunilObj = new Trainer(2, 'sunil', 2000, 'Java')
 
 window.alert(anilObj.print())
 window.alert(sunilObj.print())
