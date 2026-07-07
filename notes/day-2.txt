@@ -70,6 +70,18 @@ C, C++, Java, C#, Python
 JavaScript -> create any type of app (web or desktop)
 	Angular, React JS, Vue JS, Express JS, ...
 
+Callback mechanism:
+---------------------------
+pass a function as an argument to another function so that the later can call back the former
+
+function f1(){}
+
+function invoke(fnRef){
+	fnRef()
+}
+
+invoke(f1)
+
 TypeScript:
 ------------------
 strictly typed language:

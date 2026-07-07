@@ -17,3 +17,7 @@ create few objects of different employees
 save in them in an array
 iterate through the array (use for or for...of) and calculate salary of every employee
 iterate through the array (use for or for...of) and print total salary of every employee along with name
+
+sort the employees based on their name. by default the employees should be sorted by id.
+
+filter the employees whose salary is more than some value
