@@ -81,9 +81,12 @@ function sortValues(arr) {
     }
     return copy
 }
+
+//source of data
 const numbers = [1, 4, 2, 6, 3, 8, 9, 7, 0, 5]
 console.log(numbers);
 
+//operation
 const isEven = function (num) {
     return num % 2 === 0 //? true : false
 }

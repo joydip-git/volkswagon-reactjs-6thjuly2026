@@ -21,3 +21,6 @@ iterate through the array (use for or for...of) and print total salary of every 
 sort the employees based on their name. by default the employees should be sorted by id.
 
 filter the employees whose salary is more than some value
+
+
+convert the payroll app code from JS to TS

@@ -1,0 +1,33 @@
+sort method of array:
+
+pass a callback 
+
+function callback(a, b){
+	return an integer value
+}
+
+1. if the return value is 0 then both a and b are same
+2. if the return value is >0 then a is greater than b
+3. if the return value is <0 then a is lesser than b
+
+TypeScript: a development mode language
+------------------------------------------
+1. type inference
+2. static type checking
+3. strict typification
+
+Note:
+strictly typed language: its a strictly typed language: mention the data type. variables are declared always with "var" keyword. if some value is assigned to a variable, then only that type of value can be assigned to the same variable.
+
+before you excute the code, the TS has to be converted to JS
+
+
+extra features:
+------------------
+1. generic
+2. interface (both as abstract operation table and as custom type)
+3. class members with access specifiers (public, private and protected)
+4. custom type using 'type' keyword
+5. extra data types: any, unknown, ReadOnly type etc.
+6. readonly keyword for data members
+

@@ -82,10 +82,4 @@ function invoke(fnRef){
 
 invoke(f1)
 
-TypeScript:
-------------------
-strictly typed language:
-its a strictly typed language: mention the data type. variables are declared always with "var" keyword. if some value is assigned to a variable, then only that type of value can be assigned to the same variable.
-
-
 
