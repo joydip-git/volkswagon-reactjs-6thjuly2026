@@ -19,9 +19,6 @@ TypeScript: a development mode language
 Note:
 strictly typed language: its a strictly typed language: mention the data type. variables are declared always with "var" keyword. if some value is assigned to a variable, then only that type of value can be assigned to the same variable.
 
-before you excute the code, the TS has to be converted to JS
-
-
 extra features:
 ------------------
 1. generic
@@ -30,4 +27,119 @@ extra features:
 4. custom type using 'type' keyword
 5. extra data types: any, unknown, ReadOnly type etc.
 6. readonly keyword for data members
+
+
+JS and TS module feature:
+----------------------------
+ES6 introduced a module feature to import definitions of types from one JS/TS file to another: ES6 modules
+
+to export any member of a file:
+---------------------------------------
+export member
+
+{
+	//Employee: Employee
+	Employee
+}
+
+to import any member of a file:
+--------------------------------
+import {} from 'module'
+
+
+Transpilation: (Transformation + Compilation)
+-------------------------------------------------
+1. you have created a JS app where the code is written in latest ES version (ES17). for backward compatibility (if you have older browser or node js version, i.e., older JS engine, which will not be able to compile/interpret and then execute the latest ES version based code), you need to convert the latest ES version based code to vanilla or some older ES version based code
+
+2. before you execute the TS code, the TS has to be converted to JS (since there is no TS engine in either browser or Node JS or matter of fact in any JS runtime) and may be also for backward compatibility it has to be converted to some older version of JS based on older ES version
+
+
+Transpilers:
+latest ES based JS code -> older ES based JS code : babel
+latest ES based TS code -> older ES based JS code : tsc (typescript compiler)
+
+1. 
+install "tsc" in your app or globally in the system
+>npm install/i typescript -D
+
+2. create a configuration file for TSC
+	- tsconfig.json
+a. manullay
+b. using command: >.\node_modules\.bin\tsc --init
+
+how to add 3rd party packages in your app:
+----------------------------------------------
+use package manager -> 
+	node package manager (NPM - installed along with the Node JS)
+	bower package manager
+	yarn package manager
+
+package manager needs a file to maintain a list of packages installed in the app
+-> package.json
+this file should ALWAYS be placed at the root of your app directory
+
+how to create the package.json file?
+1. manually
+2. using NPM tool
+	>npm init 
+	or
+	>npm init --yes
+
+installing package:
+---------------------------
+>npm i <package-name>[@vesion-no] [-D] -> development dependency
+>npm i <package-name>[@vesion-no] -> complete dependency
+or 
+>npm i <package-name>[@vesion-no] [--save-dev] -> development dependency
+>npm i <package-name>[@vesion-no] [--save] -> complete dependency
+
+Note: packages will be downloaded in "node_modules" folder in your app
+      the executable scripts of the packagaes will be stored in ".bin" in "node_modules" folder
+
+modules:
+-----------------
+1. common js (used by default in Node JS) format
+	module.exports = { member1, member2,...}
+	const {member1, member2} = require('path of module')
+
+2. amd (asynchronous module definition) format
+	define('module-name',[], function(){
+		
+	})
+	
+3. umd (universal module definition) format
+	require('module-name',[], function(){
+		
+	})
+
+4. ES6 module format
+	- export member1
+	- export member2
+
+	import {member1, member2} from 'modulepath'
+
+export class Employee{} 
+	-> 
+	class Employee(){}
+	module.exports = { Employee }
+
+import {Employee} from './models/employee'
+
+	-> const {Employee} = require('./models/employee')
+
+commonjs -> module format in Node JS
+
+
+module loader: which interprets the module import and export type statements and resolves dependencies amongst the files and load them
+
+common js module loader, system js, require js, etc.
+
+Node JS has by default a Common JS module loader which understands the common js module format
+
+any browser s/w does not have a module loader. so to understand modular JS code you have to supply a module loader s/w to browser
+you can use require js module loader for browser
+require js understands only AMD module format
+
+
+
 
