@@ -1,0 +1,47 @@
+components - template/view/design + code
+
+<form>
+......
+</form>
+
+EntryForm.jsx/tsx
+
+React JS:
+------------------
+a client-side/front-end JS library which helps to create a SPA (Single age Application)
+SPA - only one HTML page will be present
+Components will be created and patched up to create the complete app UI that will be rendered in that sinle HTML file's body element
+
+two packages: react and react-dom
+
+features:
+	binding
+	- passing data from code to template: data binding
+	- how to pass data from UI to code: event binding
+	
+	pass data from one to another component
+	maintaining a state of data in a component
+..................
+
+Tools to create React JS app from scratch:
+-----------------------------------------------
+create-react-app (deprecated) - do not use this
+
+vite ->
+1. install in your system globally
+	>npm i create-vite --global
+2. use npm create command
+
+installing package globally in your system:
+-----------------------------------------------
+>npm i <package-name>[@version] --global
+
+node js installation path:
+----------------------------
+c:\program files\node js (node, npm etc.)
+
+3rd party packages installed using NPM:
+-----------------------------------------
+C:\Users\<user-name>\AppData\Roaming\npm
+	- node_modules folder -> source code
+	- all executables (not in .bin directory)

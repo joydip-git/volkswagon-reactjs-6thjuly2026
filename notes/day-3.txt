@@ -85,8 +85,8 @@ how to create the package.json file?
 	or
 	>npm init --yes
 
-installing package:
----------------------------
+installing package in an app:
+-----------------------------------
 >npm i <package-name>[@vesion-no] [-D] -> development dependency
 >npm i <package-name>[@vesion-no] -> complete dependency
 or 
