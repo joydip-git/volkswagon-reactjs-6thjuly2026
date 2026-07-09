@@ -1,0 +1,47 @@
+import { createElement } from "react"
+
+export function HelloWorld() {
+
+    //code
+
+    //data
+    const message = 'Welcome to React JS'
+
+    //event handlers
+    const headerhoverhandler = function () {
+        window.alert('hello...')
+    }
+
+
+    // -------------------------
+    //template
+
+    //React element created using React API
+    const headerReactElement = createElement(
+        'h2',
+        {
+            id: 'mainHeader',
+            onMouseOver: headerhoverhandler,
+            style: {
+                backgroundColor: 'burlywood',
+                borderColor: 'burlywood',
+                borderRadius: '5px',
+                borderStyle: 'solid',
+                borderWidth: '1px',
+                color: 'black',
+                fontFamily: 'Consolas',
+                textAlign: 'center'
+            }
+        },
+        message
+    )
+    const spanReactElement = createElement('span', null, 'this is how components are nested')
+    const brReactElement = createElement('br', null)
+
+    const divReactElement = createElement(
+        'div',
+        null,
+        [headerReactElement, brReactElement, spanReactElement]
+    )
+    return divReactElement; //returning an React element nsting other elements
+}

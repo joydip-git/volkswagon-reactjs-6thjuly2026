@@ -30,7 +30,11 @@ create-react-app (deprecated) - do not use this
 vite ->
 1. install in your system globally
 	>npm i create-vite --global
+	create app
+	>create-vite
+
 2. use npm create command
+	>npm create vite@latest
 
 installing package globally in your system:
 -----------------------------------------------
@@ -45,3 +49,26 @@ c:\program files\node js (node, npm etc.)
 C:\Users\<user-name>\AppData\Roaming\npm
 	- node_modules folder -> source code
 	- all executables (not in .bin directory)
+
+
+React JS rendering:
+----------------------------
+very first time you run the application the whole VDOM created by series of component s(functions) is responsible to produce the HTML DOM counterpart through render() method.
+This stage is known as "mounting".
+
+the word "rendering" in the React world means "a React VDOM tree has been produced by calling a React Component"
+
+in a component function you can create multiple react elements but finally you have to nest all those into one react element and return the same from the component
+
+i.e., every component should produce a mini VDOM where it must have one root react element and any other react elements of that component must be nested inside that root react element
+
+<div>
+	<h2>...
+	<br/>
+	<span>....
+</div>
+
+
+JSX or TSX => Java/Type Script and XML
+
+JSX (<div>) -> ReactDetailedElement (createElement('div')) [VDOM] -> render() -> HTML elements (HTML DOM)
