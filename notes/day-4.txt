@@ -72,3 +72,44 @@ i.e., every component should produce a mini VDOM where it must have one root rea
 JSX or TSX => Java/Type Script and XML
 
 JSX (<div>) -> ReactDetailedElement (createElement('div')) [VDOM] -> render() -> HTML elements (HTML DOM)
+
+state of a component?
+-------------------------
+	function useState<T>(initialState:T){
+		let data = intitalState
+		
+		function dispatch(newState:T){
+			data = newState
+		}
+		function dispatch(callback:(currentState:T)=>T){
+			data = callback(data)
+		}
+		return [data,dispatch]
+	}
+
+	const stateInfo = useState<number>(0)
+	const counter = stateInfo[0]
+	const setCounter = stateInfo[1]
+
+	//destructuring an object
+	const [counter,setCounter] = useState<number>(0)
+
+
+1. create a state for a component and save an initial value/data using useState
+2. immediately the useState returns - the copy of the saved data and a function to update the state (in future) to the component
+3. the component returns first version of the DOM with current data bound to the template
+4. the component is mounted
+5. update the state data using the updater function
+6. React immediately gets notified abou that change and immediately recalls the component function and passes the latest state data
+7. the component function returns a fresh version of the same VDOM but this time the latest state data is bound to the template
+8. React then compares the previous and the latest VDOM ( using an algorithm known as "diff/diffing") and finds out the template which needs to be updated in the HTML DOM and updates the same
+
+Note: updating the state is an asynchronous operation. it does not block the current thread.
+you can use useState as many times you want
+
+hook function:
+	can be called from component function ONLY
+
+2 types of components:
+1. stateful component: 
+2. stateless component: 
