@@ -1,10 +1,10 @@
-import { HelloWorld } from "./HelloWorld"
+import { App } from "./App"
 import { createRoot } from "react-dom/client";
 
-// const helloWorldReactVDOM = HelloWorld()
+// const appReactVDOM = App()
 // createRoot(document.getElementById('root')!)
-//     .render(helloWorldReactVDOM)
+//     .render(appReactVDOM)
 
 createRoot(document.getElementById('root')!)
-    .render(<HelloWorld />)
+    .render(<App />)
 
