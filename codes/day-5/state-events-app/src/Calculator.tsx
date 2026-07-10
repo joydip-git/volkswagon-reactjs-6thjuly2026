@@ -1,11 +1,13 @@
 import { useState, type SyntheticEvent } from "react"
 
 const Calculator = () => {
+  // all states will be here
   const [first, setFirst] = useState(0)
   const [second, setSecond] = useState(0)
   const [result, setResult] = useState(0)
   const [choice, setChoice] = useState(1)
 
+  // all handlers will be here
   const firstHandler = (e: SyntheticEvent) => {
     const inputElement = e.target as HTMLInputElement
     console.log(inputElement.value);
@@ -45,6 +47,9 @@ const Calculator = () => {
       <form>
         <fieldset>
           <legend>Calculator: &nbsp;</legend>
+
+          {/* separate component for radio buttons -> NavBar */}
+
           <div>
             <label htmlFor="radioAdd">Add:&nbsp;</label>
             <input type="radio" name="calcgroup" id="radioAdd"
@@ -65,6 +70,9 @@ const Calculator = () => {
             <input type="radio" name="calcgroup" id="radioDiv"
               onChange={() => setChoice(4)} />
           </div>
+
+
+          {/* separate component for this inputs -> CalculatorInput */}
           <div>
             <label htmlFor="txtFirst">First:&nbsp;</label>
             <input type="text" id="txtFirst" value={first} onChange={firstHandler} />
@@ -80,6 +88,8 @@ const Calculator = () => {
           <div>
             <button type="button" onClick={calculationHandler}>Calculate</button>
           </div>
+
+          {/* separate component for result -> CalculationResult */}
           <div>
             <label htmlFor="txtResult">Result:&nbsp;</label>
             <input type="text" id="txtResult" readOnly value={result} />

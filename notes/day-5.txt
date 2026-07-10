@@ -33,3 +33,22 @@ hook functions:
 	- every hook function starts with a prefix "use"
 
 useState() -> state hook function
+
+2 types of components:
+------------------------------
+1. stateful component: a component where you maintain state of data
+2. stateless component: a component which does not maintain state of data. rather it receives data from its parent component and renders.[presentational component]
+
+lifting the state up -> maintain the state of data at a top level parent component
+
+
+how to pass data from one component to another component
+---------------------------------------------------------
+1. how to pass data from parent component to a nested component
+	via property object: collection of properties of a component though which data or handler function reference can be passed to nested from a parent component
+	this property object is read-only and can't be modified
+
+
+
+
+

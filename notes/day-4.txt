@@ -110,6 +110,4 @@ you can use useState as many times you want
 hook function:
 	can be called from component function ONLY
 
-2 types of components:
-1. stateful component: 
-2. stateless component: 
+
