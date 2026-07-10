@@ -1,0 +1,35 @@
+any JS function when called an object in JS runtime (browser/node js) is created, known as function execution context object (FEC), which has 3 properties
+
+	- varobj -> reference to an object which stores all local variables (declared with var, let and const) of the function
+	it is destroyed when the FEC is destroyed
+
+	- this -> reference to an object which stores all object data (declared with this keyword) of the function
+	note: the "this" property gets attached to window or global object by default if new keyword is not used while calling the function
+the "this" property gets attached to a fresh new object if new keyword is used while calling the function
+
+	- scope -> reference to an array with all the copy of the outer scope variables of the function
+
+a FEC object for a function gets destroyed as soon as the function call is over taking down the varobj and scope, BUT NOT the "this" object
+
+
+Note: any function has access to the local variables of the outer scope, but does not have access to the local variables of its inner scope. JS preserves a copy of all the local variables of a function's outer scope. This is known as "closure" [Maintaining a lexicla environment of local outer scope variables for a function]
+
+
+arrow function:
+	to bind a function's "this" property with the same object/instance to which the outer function is bound to, so that the inner function has access to the "this" data of the outer function
+	
+react and react-dom
+Virtual DOM
+
+how react js updated the UI?
+
+a. either a component's state has been updated
+b. or a component has received a new property object
+
+hook functions:
+------------------------
+	- hook react component with something, such as, state, effects, refs, context etc.
+	- hook functions can be used from a component or another/custom hook
+	- every hook function starts with a prefix "use"
+
+useState() -> state hook function
