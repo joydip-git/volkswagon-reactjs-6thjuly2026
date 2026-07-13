@@ -1,0 +1,63 @@
+map() method of array:
+--------------------------
+
+const numbers=[1,2,3,4]
+const multiplied:string[] = numbers.map(
+	(num)=>{
+		return (num*5).toString()
+	})
+
+display a list of data/values in React JS:
+----------------------------------------------
+using map() method of the collection
+
+while using map() method on some list/collection, each child in a list should have a unique "key" prop. the property shiuld be used with the root element.
+
+conditional rendering:
+------------------------
+based on condition display a template/component or not
+first time show/display the template/component -> mounting
+taking down from the DOM -> unmounting
+
+JSX syntax of if loop equivalence: 
+-------------------------------------
+{ condition(some state/props data) && template/component }
+
+JSX syntax of if...else loop equivalence: 
+-------------------------------------
+{ condition(some state/props data)? template/component:alternate-template/component}
+
+
+pms-app structure:
+-----------------------
+src	
+	main.tsx
+	index.css
+	index.html
+
+	models (folder)
+		product.ts -> model (type or interface) to represent the each product object in the sample products array
+
+	data (folder)
+		productrecords.ts -> declare an exportable array of products and assign the sample array to it
+
+	components (folder)
+
+		app (folder)
+			App.tsx
+			App.css
+
+		products (folder)
+			product-list (folder)
+				ProductList.tsx [import ./ProductList.css]
+				ProductList.css
+		common (folder)
+
+
+
+
+
+
+
+
+
