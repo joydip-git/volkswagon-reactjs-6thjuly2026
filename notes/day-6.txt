@@ -27,6 +27,12 @@ JSX syntax of if...else loop equivalence:
 -------------------------------------
 { condition(some state/props data)? template/component:alternate-template/component}
 
+Asynchronous operations in JS:
+------------------------------------
+JS is single threaded. It does not offer support for multi-threading.
+But it can take advantage of the runtime environment to execute any method asynchronously in case the environment supports multi-threading. 
+JS "Promise" API can delegate execution of a function to an extra thread of the environment without blocking the single thread of it.
+
 
 pms-app structure:
 -----------------------
