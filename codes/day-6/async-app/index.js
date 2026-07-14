@@ -12,6 +12,7 @@ const divide = (a, b) => {
 
             //return divRes
             //update Promise's state to fulfilled/resolved
+            //console.log(divRes);
             resolveFnRef(divRes)
         }
     )

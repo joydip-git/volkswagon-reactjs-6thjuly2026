@@ -1,6 +1,10 @@
 async and await keywords in JS
 
 HTTP requests
+	- fetch() DOM API or fetch() Node JS API
+	- 3rd party API, such as, Axios
+
+
 
 effect hook
 
