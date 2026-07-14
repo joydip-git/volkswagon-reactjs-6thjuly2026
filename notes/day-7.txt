@@ -1,9 +1,13 @@
 async and await keywords in JS
+--------------------------------
 
 HTTP requests
+------------------------
 	- fetch() DOM API or fetch() Node JS API
 	- 3rd party API, such as, Axios
 
+situation:
+-------------------
 fetch data only once after component has finished mounting (showing the fallback/default design)
 
 fetch data multiple times after component has finished mounting (update)
@@ -58,7 +62,3 @@ effect hook:
 clean up code:
 ------------------
 to clear the resource (promise api, connection to db or file or web socket etc.) used in the previous cycle while executing side effect causing code, in the next cycle
-
-
-
-context object

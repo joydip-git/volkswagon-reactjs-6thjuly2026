@@ -1,0 +1,5 @@
+axios configuration
+context object [state management]
+routing
+
+redux [state management]
