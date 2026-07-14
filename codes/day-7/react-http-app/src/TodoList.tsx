@@ -1,14 +1,17 @@
 // import { Fragment } from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import type { Todo } from "./models/todo"
 import { getTodos } from "./services/todo-service"
+import TodoInfo from "./TodoInfo"
 
 const TodoList = () => {
+    console.log('Todolist loaded');
     const [todos, setTodos] = useState<Todo[]>([])
     const [errorInfo, setErrorInfo] = useState('')
     const [isFetchOver, setIsFetchOver] = useState(false)
+    const [selectedId, setSelectedId] = useState(0)
 
-    const loadDataHandler = async () => {
+    const fetchAllTodos = async () => {
         setIsFetchOver(false)
         try {
             const data: Todo[] = await getTodos()
@@ -22,14 +25,43 @@ const TodoList = () => {
         }
     }
 
+    useEffect(
+        () => {
+            console.log('[TDL] everytime...');
+
+            const x = 100
+            console.log(x);
+            return () => {
+                //x = 0
+                console.log(x);
+                console.log('[TDL] clean-up every time first except the first time');
+            }
+        }
+    )
+
+    useEffect(
+        () => {
+            //immediately invocable function expression (IIFE)
+            // (async function () {
+            //     await fetchAllTodos()
+            // })()
+            console.log('TDL one time...until and unless unmounted');
+            async function invoke() {
+                await fetchAllTodos()
+            }
+            invoke()
+            
+            return () => {              
+                console.log('[TDL] clean-up ONE TIME during unmounting except the first time');
+            }
+        },
+        []
+    )
     const todosTable = todos.map(
         (todo) => {
             return <tr key={todo.id}>
-                <td>{todo.title}</td>
-                <td>{todo.userId}</td>
-                <td>
-                    {todo.completed ? 'Done' : 'Pending'}
-
+                <td onClick={() => setSelectedId(todo.id)}>
+                    <u>{todo.title}</u>
                 </td>
             </tr>
         }
@@ -52,21 +84,23 @@ const TodoList = () => {
                         <thead>
                             <tr>
                                 <th>Task</th>
-                                <th>Assigned To</th>
-                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             {todosTable}
                         </tbody>
                     </table>
+                    <br />
+                    {
+                        selectedId > 0 ? <TodoInfo todoId={selectedId} /> : <span>select a task to view the details</span>
+                    }
                 </>
             )
     }
 
     return (
         <div>
-            <button onClick={loadDataHandler}>Load Data</button>
+            {/* <button onClick={fetchAllTodos}>Load Data</button> */}
             <br />
             {design}
         </div>

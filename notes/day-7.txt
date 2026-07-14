@@ -4,8 +4,61 @@ HTTP requests
 	- fetch() DOM API or fetch() Node JS API
 	- 3rd party API, such as, Axios
 
+fetch data only once after component has finished mounting (showing the fallback/default design)
+
+fetch data multiple times after component has finished mounting (update)
+
+effect hook:
+-------------------------
+	a React JS API
+	useEffect() => does not return anything
+	useEffect(
+		()=>{
+			//side effect causing code
+		},
+		[] => optional (dependency array)
+	)
+	it helps you to execute a "side-effect causing code" (fethcing data using HTTP request, file data reading or writing, sending request via WebSocket etc.) after initial mounting of a component and update the UI
+	control how and when that code is executed
+	the code is executed ALWAYS after rendering and causes another round of rendering
+
+//this side effect causing code will be executed every time after the rendering
+//and will return a callback which will be executed in the next cycle first
+
+	useEffect(
+		()=>{
+			//side effect causing code
+
+			return ()=>{
+				//clean-up code
+			}
+		}
+	)
+
+//this side effect causing code will be executed ONLY ONE TIME time during the lifecycle of the component (i.e., until and unless unmounted) after the rendering and will return a callback which will be executed only when the component is unmounted
+
+	useEffect(
+		()=>{
+			//side effect causing code
+			return () => { //clean-up code }
+		}, [blank dependency array]
+	)
+
+//this side effect causing code will be executed EVERY TIME WHEN ANY OF THE VALUES IN THE DEPENDENCY ARRAY CHANGES after the rendering and will return a callback which will be executed first only when the component is loaded again due to dependency changes
+
+	useEffect(
+		()=>{
+
+			//side effect causing code
+			return () => { //clean-up code }
+
+		}, [value1, value2,...]
+	)
+
+clean up code:
+------------------
+to clear the resource (promise api, connection to db or file or web socket etc.) used in the previous cycle while executing side effect causing code, in the next cycle
 
 
-effect hook
 
 context object
