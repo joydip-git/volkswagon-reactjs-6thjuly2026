@@ -1,5 +1,29 @@
-axios configuration
 context object [state management]
+redux [state management]
+axios configuration
 routing
 
-redux [state management]
+sharing data between components
+	a. passing data from parent to a immediately or shallowly nested component and vice versa
+		- pass data via props
+	b. sharing data between deeply nested component and a parent component
+		- from parent save data in a context object which can be accessed by any child in the same tree
+	c. sharing data between any components whether they are in the same or different tree
+
+Context Object: used to share data between components in the same tree
+	1. to create -> const SomeContext = createContext<T>(initialData)
+	2. to provide data from a parent -> 
+		<SomeContext.Provider value={of type T}>
+			<the component tree>
+		</...>
+	3. to consume data from a child in the same tree
+		const contextData = useContext(SomeContext)
+Note: no component outside the scope of the component tree will be able to get latest data from context. 
+
+
+sharing data between any components whether they are in the same or different tree
+-------------------------------------------------------------------------------------
+application-wide state management
+	Facebook -> Flux (an architectural pattern)
+	Redux -> 3rd party library (providing the solution/implementation)
+
