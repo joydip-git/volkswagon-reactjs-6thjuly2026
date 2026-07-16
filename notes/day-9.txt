@@ -13,3 +13,26 @@ NOT create
 	- action types and creators (will be extracted from reducer)
 	- action type (built-in PayloadAction<T>)
 	- legacy_createStore() (configureStore())
+
+
+Routing:
+-----------------------
+client-side routing (NOT server-side routing)
+
+react router:
+>npm i react-router
+
+
+route => path and component
+
+1. create all routes: [Route]
+products 		=> ProductList
+products/add 		=> AddProduct
+products/view/:pid 	=> ViewProduct {pid:"1"}
+products/edit/:pid	=> EditProduct {pid:"1"}
+
+2. create a array with all route definitions [Routes]
+
+3. register the routes array with router engine
+
+

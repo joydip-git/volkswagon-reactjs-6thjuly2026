@@ -16,7 +16,7 @@ const ProductRow = (args: Readonly<ProductRowPropType>) => {
         <td>{args.product.price}</td>
         <td>{args.product.starRating}</td>
         <td>
-            <button type="button">Delete</button>
+            <button type="button" className='btn btn-danger btn-border'>Delete</button>
         </td>
     </tr>
 }

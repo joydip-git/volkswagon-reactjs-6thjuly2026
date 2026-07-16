@@ -2,3 +2,6 @@
     margin: 2px;
     width: 80px;
 }
+.btn-border{
+    border-radius: 5px;
+}

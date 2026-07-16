@@ -1,7 +1,5 @@
 context object [state management]
 redux [state management]
-axios configuration
-routing
 
 sharing data between components
 	a. passing data from parent to a immediately or shallowly nested component and vice versa
