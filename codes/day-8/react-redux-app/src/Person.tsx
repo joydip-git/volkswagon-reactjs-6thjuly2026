@@ -5,7 +5,7 @@ import { changeActionCreator } from "./redux/action-creators";
 import { useTypedDispatch, useTypedSelector } from "./redux/typedhooks";
 
 const Person = () => {
-    // const nameState = useSelector((stateMap: AppStateType) => stateMap.nameState)
+    // const nameState = useSelector((stateMap: StoreStateType) => stateMap.nameState)
     const nameState = useTypedSelector(stateMap => stateMap.nameState)
     //const dispatch = useDispatch()
     const dispatch = useTypedDispatch()

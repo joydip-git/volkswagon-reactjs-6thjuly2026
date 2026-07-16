@@ -1,35 +1,44 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import './ProductList.css'
 import ProductRow from "../product-row/ProductRow"
 import type { Product } from "../../../models/product"
 import { getProducts } from "../../../services/product-service"
 import type { AxiosResponse } from "axios"
 import type { ApiResponse } from "../../../models/apiresponse"
+import { useTypedDispatch, useTypedSelector } from "../../../redux/typedhooks"
+import { failureActionCreator, resetActionCreator, successActionCreator } from "../../../redux/productsslice"
 
 const ProductList = () => {
-    const [products, setProducts] = useState<Product[]>([])
-    const [errorInfo, setErroInfo] = useState('')
-    const [isfetchOver, setIsFetchOver] = useState(false)
+
+    const { products, errorInfo, isFetchOver } = useTypedSelector(statemap => statemap.productsState)
+    const dispatch = useTypedDispatch()
 
     const fetchProducts = async () => {
-        setIsFetchOver(false)
+        // before fresh fetch, reset the states
+        // dispatch({type:'productsslice/reset'})
+        const resetAction = resetActionCreator()
+        dispatch(resetAction)
+
         try {
             const response: AxiosResponse<ApiResponse<Product[]>> = await getProducts()
             const apiResponse: ApiResponse<Product[]> = response.data
             if (apiResponse.data !== null) {
-                setProducts(apiResponse.data)
-                setErroInfo('')
-                setIsFetchOver(true)
+                // success update: (payload: Product[])
+                // dispatch({type:'productsslice/success', payload:apiResponse.data})
+                const successAction = successActionCreator(apiResponse.data)
+                dispatch(successAction)
             } else {
-                setProducts([])
-                setErroInfo(apiResponse.message)
-                setIsFetchOver(true)
+                //failure update: (payload: string)
+                //dispatch({type:'productsslice/failure', payload:apiResponse.message})
+                const failureAction = failureActionCreator(apiResponse.message)
+                dispatch(failureAction)
             }
         } catch (error: any) {
             console.log(error.message);
-            setProducts([])
-            setErroInfo(error.message)
-            setIsFetchOver(true)
+            //failure update: (payload: string)
+            //dispatch({type:'productsslice/failure', payload:error.message})
+            const failureAction = failureActionCreator(error.message)
+            dispatch(failureAction)
         }
     }
 
@@ -49,7 +58,7 @@ const ProductList = () => {
         )
 
     let design
-    if (!isfetchOver)
+    if (!isFetchOver)
         design = <span>Loading...</span>
     else if (errorInfo !== '')
         design = <span>{errorInfo}</span>

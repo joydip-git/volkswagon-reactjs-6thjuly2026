@@ -5,7 +5,7 @@ import { decreaseActionCreator, increaseActionCreator } from "./redux/action-cre
 import { useTypedDispatch, useTypedSelector } from "./redux/typedhooks"
 
 const Counter = () => {
-    // const counterState = useSelector((stateMap: AppStateType) => stateMap.countState)
+    // const counterState = useSelector((stateMap: StoreStateType) => stateMap.countState)
     const counterState = useTypedSelector((stateMap) => stateMap.countState)
     //const dispatch = useDispatch()
     const dispatch = useTypedDispatch()

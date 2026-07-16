@@ -14,7 +14,7 @@ const reducerMap = combineReducers({
 
 //create store
 const AppStore = legacy_createStore(reducerMap, middlewarePipeline)
-
+//console.log(AppStore.getState());
 export type StoreStateType = ReturnType<typeof AppStore.getState>
 export type StoreDispatchType = typeof AppStore.dispatch
 

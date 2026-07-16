@@ -10,3 +10,5 @@ export type NameStateType = {
 export type CountStateType = {
     count: number
 }
+
+// export type StateType = NameStateType & CountStateType

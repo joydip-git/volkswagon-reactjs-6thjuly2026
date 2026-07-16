@@ -1,0 +1,15 @@
+1. redux package (legacy) or @reduxjs/toolkit (modern)
+2. react-redux package
+
+3. redux-logger
+
+hooks:
+---------
+const stateWRTProp1 = useSelector( (statemap) => statemap.prop1)
+const dispatchFnRef = useDispatch()
+
+
+NOT create
+	- action types and creators (will be extracted from reducer)
+	- action type (built-in PayloadAction<T>)
+	- legacy_createStore() (configureStore())
