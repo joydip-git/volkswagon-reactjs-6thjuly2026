@@ -1,11 +1,13 @@
 //import { Route, Routes, } from "react-router";
+import { lazy } from "react"
 import { useRoutes, type RouteObject } from "react-router"
-import ProductList from "../components/products/product-list/ProductList"
-import AddProduct from "../components/products/add-product/AddProduct"
-import ViewProduct from "../components/products/view-product/ViewProduct"
-import EditProduct from "../components/products/edit-product/EditProduct"
-import Home from "../components/common/home/Home"
-import PageNotFound from "../components/common/page-not-found/PageNotFound"
+const ProductList = lazy(() => import("../components/products/product-list/ProductList"))
+const AddProduct = lazy(() => import("../components/products/add-product/AddProduct"))
+const ViewProduct = lazy(() => import("../components/products/view-product/ViewProduct"))
+const EditProduct = lazy(() => import("../components/products/edit-product/EditProduct"))
+const Home = lazy(() => import("../components/common/home/Home"))
+const PageNotFound = lazy(() => import("../components/common/page-not-found/PageNotFound"))
+
 
 const AppRoutes = () => {
     const productRoutes: RouteObject = {
@@ -27,7 +29,7 @@ const AppRoutes = () => {
         ]
     }
     //useRoutes => Hook version of Routes that uses objects instead of components.
-    
+
     const routes = useRoutes([productRoutes, appRoutes])
     return routes
     /*

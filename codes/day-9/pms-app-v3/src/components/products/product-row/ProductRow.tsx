@@ -1,10 +1,13 @@
 import { Link } from 'react-router'
 import type { Product } from '../../../models/product'
 import './ProductRow.css'
+
 type ProductRowPropType = {
-    product: Product
+    product: Product,
+    deleteProductHandler: (id: number) => void
 }
 const ProductRow = (args: Readonly<ProductRowPropType>) => {
+
     return <tr>
         <td>
             <Link to={`/products/view/${args.product.productId}`}>
@@ -19,7 +22,12 @@ const ProductRow = (args: Readonly<ProductRowPropType>) => {
         <td>{args.product.price}</td>
         <td>{args.product.starRating}</td>
         <td>
-            <button type="button" className='btn btn-danger btn-border'>Delete</button>
+            <button type="button" className='btn btn-danger btn-border'
+                onClick={
+                    () => args.deleteProductHandler(args.product.productId)
+                }>
+                Delete
+            </button>
         </td>
     </tr>
 }

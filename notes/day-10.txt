@@ -3,9 +3,17 @@ routing - part 2
 useNavigate() => NavigateFunction
 Returns a function that lets you navigate programmatically in the browser in response to user interactions or effects.
 
+categories/:cid/products/:pid -> path
+http://loclahost:4000/categories/1/products/2
+
+{ cid: "1", pid: "2" }
+
 useReducer hook
 axios configuration
 form handling
+
+lazy loading:
+lazy() -> Lets you defer loading a component’s code until it is rendered for the first time.
 
 
 client-side routing

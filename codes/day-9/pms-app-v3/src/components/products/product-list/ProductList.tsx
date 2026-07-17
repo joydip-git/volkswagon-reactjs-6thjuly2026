@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import './ProductList.css'
 import ProductRow from "../product-row/ProductRow"
 import type { Product } from "../../../models/product"
-import { getProducts } from "../../../services/product-service"
+import { deleteProductById, getProducts } from "../../../services/product-service"
 import type { AxiosResponse } from "axios"
 import type { ApiResponse } from "../../../models/apiresponse"
 import { useTypedDispatch, useTypedSelector } from "../../../redux/typedhooks"
@@ -42,6 +42,22 @@ const ProductList = () => {
         }
     }
 
+    const deleteProduct = async (id: number) => {
+        if (window.confirm('delete product?')) {
+            try {
+                const axiosResponse = await deleteProductById(id)
+                const apiResponse = axiosResponse.data
+                if (apiResponse.data !== null) {
+                    window.alert('product deleted successfully')
+                    await fetchProducts()
+                } else {
+                    window.alert('could not delete because of error. ' + apiResponse.message)
+                }
+            } catch (error: any) {
+                window.alert('could not delete because of error. ' + error.message)
+            }
+        }
+    }
     useEffect(
         () => {
             (async function () {
@@ -53,7 +69,7 @@ const ProductList = () => {
     const productRows: React.JSX.Element[] =
         products.map(
             (p) => {
-                return <ProductRow product={p} key={p.productId} />
+                return <ProductRow product={p} key={p.productId} deleteProductHandler={deleteProduct} />
             }
         )
 

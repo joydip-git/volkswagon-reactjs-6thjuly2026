@@ -6,7 +6,7 @@ import { updateProductById } from "../../../services/product-service"
 import './EditProduct.css'
 
 const EditProduct = () => {
-  const { product, errorInfo, isFetchOver } = useTypedSelector(statemap => statemap.productState)
+  const { product } = useTypedSelector(statemap => statemap.productState)
   const dispatch = useTypedDispatch()
   const navigate = useNavigate()
 
@@ -35,11 +35,11 @@ const EditProduct = () => {
   }
 
 
-  if (!isFetchOver)
-    return <span>Loading....</span>
-  else if (errorInfo !== '')
-    return <span>{errorInfo}</span>
-  else if (product === undefined)
+  // if (!isFetchOver)
+  //   return <span>Loading....</span>
+  // else if (errorInfo !== '')
+  //   return <span>{errorInfo}</span>
+  if (product === undefined)
     return <span>No record found</span>
   else
     return (
