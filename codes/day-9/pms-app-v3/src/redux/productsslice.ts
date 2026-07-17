@@ -1,9 +1,9 @@
 // import { createSlice, type ActionCreatorWithPayload, type PayloadAction, type WritableDraft } from "@reduxjs/toolkit";
 import { createSlice, type PayloadAction, type WritableDraft } from "@reduxjs/toolkit";
-import type { ProductsStatType } from "./types";
+import type { ProductsStateType } from "./types";
 import type { Product } from "../models/product";
 
-const initialProductsState: ProductsStatType = {
+const initialProductsState: ProductsStateType = {
     products: [],
     errorInfo: '',
     isFetchOver: false
@@ -42,17 +42,17 @@ const productsSlice = createSlice({
     name: 'productsslice',
     initialState: initialProductsState,
     reducers: {
-        reset: (state: WritableDraft<ProductsStatType>) => {
+        reset: (state: WritableDraft<ProductsStateType>) => {
             state.products = []
             state.errorInfo = ''
             state.isFetchOver = false
         },
-        success: (state: WritableDraft<ProductsStatType>, action: PayloadAction<Product[]>) => {
+        success: (state: WritableDraft<ProductsStateType>, action: PayloadAction<Product[]>) => {
             state.products = action.payload
             state.errorInfo = ''
             state.isFetchOver = true
         },
-        failure: (state: WritableDraft<ProductsStatType>, action: PayloadAction<string>) => {
+        failure: (state: WritableDraft<ProductsStateType>, action: PayloadAction<string>) => {
             state.products = []
             state.errorInfo = action.payload
             state.isFetchOver = true

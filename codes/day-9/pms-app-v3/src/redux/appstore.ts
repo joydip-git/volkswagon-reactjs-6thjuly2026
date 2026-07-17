@@ -1,16 +1,13 @@
-//import { combineReducers} from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
 import { productsReducer } from "./productsslice";
 import { createLogger } from "redux-logger";
-
-// const reducerMap = combineReducers({
-//     productsState: productsReducer
-// })
+import { productReducer } from "./productslice";
 
 const logger = createLogger()
 const AppStore = configureStore({
     reducer: {
-        productsState: productsReducer
+        productsState: productsReducer,
+        productState: productReducer
     },
     middleware: (piplineFn) => {
         return piplineFn().concat(logger)

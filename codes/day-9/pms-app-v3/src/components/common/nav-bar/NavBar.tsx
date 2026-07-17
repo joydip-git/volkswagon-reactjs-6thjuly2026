@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const NavBar = () => {
     return (
         <nav className="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
@@ -9,20 +11,26 @@ const NavBar = () => {
                 <div className="collapse navbar-collapse" id="navbarColor01">
                     <ul className="navbar-nav me-auto">
                         <li className="nav-item">
-                            <a className="nav-link active" href="#">Home
-                                <span className="visually-hidden">(current)</span>
-                            </a>
+                            <Link to={'/home'}>
+                                <button type="button" className="nav-link active">Home
+                                    <span className="visually-hidden">(current)</span>
+                                </button>
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Products</a>
+                            <Link to='/products'>
+                                <a className="nav-link">Products</a>
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Add Product</a>
-                        </li>                       
+                            <Link to='/products/add'>
+                                <a className="nav-link">Add Product</a>
+                            </Link>
+                        </li>
                     </ul>
                     <form className="d-flex">
-                        <input className="form-control me-sm-2" type="search" placeholder="Search"/>
-                            <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                        <input className="form-control me-sm-2" type="search" placeholder="Search" />
+                        <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                     </form>
                 </div>
             </div>
